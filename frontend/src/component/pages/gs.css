@@ -1,0 +1,10 @@
+.wedding-gallery { font-family: 'Serif', sans-serif; }
+.navbar { display: flex; justify-content: space-between; align-items: center; padding: 1rem 2rem; background: #222; color: #fff; }
+.nav-links { display: flex; gap: 2rem; list-style: none; }
+.reserve-btn { background: #fff; color: #222; border: none; padding: 0.5rem 1rem; border-radius: 5px; }
+.hero-section { position: relative; height: 400px; background-size: cover; background-position: center; }
+.hero-overlay { position: absolute; top: 0; left: 0; right: 0; bottom: 0; display: flex; flex-direction: column; justify-content: center; align-items: center; background: rgba(0,0,0,0.5); color: #fff; }
+.couple-names { font-size: 3rem; }
+.subtitle { font-size: 1.5rem; }
+.gallery-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; padding: 2rem; background: #111; }
+.gallery-item img { width: 100%; border-radius: 10px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }

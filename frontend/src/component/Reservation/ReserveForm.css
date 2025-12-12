@@ -1,0 +1,379 @@
+/* === Global Container === */
+.container {
+  max-width: 750px; 
+  margin: 30px auto; 
+  color: #f5f5f5;
+  border-radius: 12px; 
+  font-family: "Poppins", sans-serif;
+  transition: all 0.3s ease-in-out;
+}
+
+/* === Gallery-style Cover === */
+.cover {
+  position: relative;
+  width: 100%;
+  height: 420px; /* adjust height as needed */
+  overflow: hidden;
+  border-radius: 12px;
+  margin-bottom: 20px;
+}
+
+.cover img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  filter: brightness(0.55);
+  transform-origin: center;
+  transition: transform 10s linear;
+}
+
+.cover:hover img {
+  transform: scale(1.03); /* gentle slow zoom on hover */
+}
+
+.cover-text {
+  position: absolute;
+  left: 50%;
+  bottom: 36px;
+  transform: translateX(-50%);
+  text-align: center;
+  pointer-events: none;
+}
+
+.cover-text h1,
+.cover-text h2 {
+  margin: 0;
+  font-size: 65px;
+  font-weight: 800;
+  letter-spacing: 0.6px;
+  font-family: 'Trajan-Pro-3-Bold', serif;
+}
+
+.cover-text .line {
+  width: 72px;
+  height: 3px;
+  background: #fff;
+  margin: 10px auto 0;
+}
+
+/* === Section Headings === */
+.form-section h2 {
+  font-size: 1.4rem;
+  margin-bottom: 12px;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  font-weight: 600;
+  color: #ffffff;
+  text-align: center;
+  font-family: 'Playfair Display', 'Georgia', serif;
+}
+
+/* === Inputs & Textarea === */
+.form-group {
+  margin-bottom: 14px;
+}
+
+label {
+  display: block;
+  font-size: 0.9rem;
+  margin-bottom: 4px;
+  color: #ccc;
+  letter-spacing: 1px;
+}
+
+input,
+textarea {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid #333;
+  border-radius: 8px;
+  background: #1a1a1a;
+  color: #f5f5f5;
+  font-size: 0.95rem;
+  transition: border 0.3s, background 0.3s;
+}
+
+input:focus,
+textarea:focus {
+  border: 1px solid #fff;
+  background: #111;
+  outline: none;
+}
+
+/* === Date Input Calendar Icon === */
+input[type="date"] {
+  color-scheme: dark;
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="15" viewBox="0 0 24 24"><path fill="%23ffffff" d="M20 3h-1V1a1 1 0 0 0-2 0v2H7V1a1 1 0 0 0-2 0v2H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2zM4 7h16v2H4V7zm0 4h16v8H4v-8z"/></svg>');
+  background-color: transparent;
+  background-size: 16px 16px;
+  background-repeat: no-repeat;
+  background-position: center;
+  cursor: pointer;
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator:hover {
+  opacity: 0.8;
+}
+
+/* === Option Groups === */
+.radio-group,
+.service-options,
+.time-options,
+.style-options,
+.hear-about-options {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 8px;
+}
+
+/* Hide default radios/checkboxes */
+input[type="radio"],
+input[type="checkbox"] {
+  display: none;
+}
+
+/* === Radio Buttons === */
+#contact-email-input + label,
+#contact-whatsapp-input + label,
+#contact-phone-input + label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  color: #fff;
+  font-size: 0.95rem;
+  position: relative;
+  transition: all 0.3s ease-in-out;
+}
+
+#contact-email-input + label::before,
+#contact-whatsapp-input + label::before,
+#contact-phone-input + label::before {
+  content: "";
+  width: 18px;
+  height: 18px;
+  border: 2px solid #fff;
+  border-radius: 50%;
+  display: inline-block;
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0 0 4px rgba(255, 255, 255, 0.2);
+  background: transparent;
+  position: relative;
+}
+
+#contact-email-input:checked + label::before,
+#contact-whatsapp-input:checked + label::before,
+#contact-phone-input:checked + label::before {
+  background: repeating-conic-gradient(
+    #ffffff 0deg 30deg,
+    #1a1a1a 30deg 60deg
+  );
+  border: 2.5px solid #ffffff;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.7);
+}
+
+#contact-email-input:checked + label,
+#contact-whatsapp-input:checked + label,
+#contact-phone-input:checked + label {
+  color: #ffffff;
+  font-weight: 600;
+  transform: scale(1.02);
+}
+
+/* === Card-style Options with IDs === */
+#service-wedding-option,
+#service-engagement-option,
+#service-maternity-option,
+#service-casual-option,
+#service-family-option,
+#service-other-option,
+#time-morning-option,
+#time-evening-option,
+#time-full-day-option,
+#style-traditional-option,
+#style-candid-option,
+#style-editorial-option,
+#style-documentary-option,
+#hear-friend-option,
+#hear-social-option,
+#hear-website-option,
+#hear-other-option {
+  padding: 10px 14px;
+  border: 1px solid #555;
+  border-radius: 10px;
+  background: #1a1a1a;
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+  color: #fff;
+  font-size: 0.95rem;
+}
+
+#service-wedding-option:hover,
+#service-engagement-option:hover,
+#service-maternity-option:hover,
+#service-casual-option:hover,
+#service-family-option:hover,
+#service-other-option:hover,
+#time-morning-option:hover,
+#time-evening-option:hover,
+#time-full-day-option:hover,
+#style-traditional-option:hover,
+#style-candid-option:hover,
+#style-editorial-option:hover,
+#style-documentary-option:hover,
+#hear-friend-option:hover,
+#hear-social-option:hover,
+#hear-website-option:hover,
+#hear-other-option:hover {
+  border-color: #ffffff;
+  transform: translateY(-1px);
+}
+
+#service-wedding-option.selected,
+#service-engagement-option.selected,
+#service-maternity-option.selected,
+#service-casual-option.selected,
+#service-family-option.selected,
+#service-other-option.selected,
+#time-morning-option.selected,
+#time-evening-option.selected,
+#time-full-day-option.selected,
+#style-traditional-option.selected,
+#style-candid-option.selected,
+#style-editorial-option.selected,
+#style-documentary-option.selected,
+#hear-friend-option.selected,
+#hear-social-option.selected,
+#hear-website-option.selected,
+#hear-other-option.selected {
+  background: #00ffff10;
+  color: #00ffff;
+  border-color: #ffffff;
+  font-weight: 600;
+  transform: scale(1.03);
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+}
+
+/* === Terms Checkbox === */
+.checkbox-option label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  color: #eee;
+  position: relative;
+}
+
+.checkbox-option label::before {
+  content: "";
+  width: 18px;
+  height: 18px;
+  border: 2px solid #fff;
+  border-radius: 5px;
+  display: inline-block;
+  background: transparent;
+  transition: all 0.3s ease-in-out;
+}
+
+/* Put a check mark icon using ::after and style the box on checked */
+.checkbox-option label::after {
+  content: "";
+  position: absolute;
+  /* center the icon inside the 18x18 box: left = (18-16)/2 = 1px */
+  left: 1px;
+  top: 50%;
+  width: 16px;
+  height: 16px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 16px 16px;
+  opacity: 0;
+  transform: translateY(-50%) scale(0.95);
+  transition: opacity 0.18s ease, transform 0.18s ease;
+  pointer-events: none;
+}
+
+.checkbox-option input[type="checkbox"]:checked + label::before {
+  /* keep outline only when checked; remove colored fill */
+  background: transparent;
+  border-color: #ffffff;
+  box-shadow: 0 0 6px rgba(255, 255, 255, 0.08);
+}
+
+/* White check icon (SVG) shown when checked */
+.checkbox-option input[type="checkbox"]:checked + label::after {
+  opacity: 1;
+  transform: translateY(-50%) scale(1);
+  /* thicker stroked checkmark for a bolder look */
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><path d='M4 12l5 5L20 6' stroke='%23ffffff' stroke-width='2.6' fill='none' stroke-linecap='round' stroke-linejoin='round'/></svg>");
+}
+
+/* === Submit Button === */
+.submit-btn {
+  margin: 16px auto 0 auto;
+  display: block;
+  background: transparent;
+  color: #fff;
+  padding: 12px 22px;
+  border: 2px solid #fff;
+  border-radius: 40px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1.2px;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease-in-out;
+  z-index: 1;
+}
+
+.submit-btn::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 200%;
+  height: 100%;
+  background: linear-gradient(120deg, transparent, rgba(255,255,255,0.3), transparent);
+  transition: all 0.6s;
+}
+
+.submit-btn:hover::before {
+  left: 100%;
+}
+
+.submit-btn:hover {
+  background: #fff;
+  color: #000;
+  box-shadow: 0 0 20px rgba(255,255,255,0.5);
+  transform: translateY(-1px) scale(1.02);
+}
+
+.submit-btn:disabled {
+  border-color: #555;
+  color: #777;
+  cursor: not-allowed;
+  box-shadow: none;
+  background: transparent;
+}
+
+/* === Responsive === */
+@media (max-width: 900px) {
+  .cover { height: 340px; }
+}
+
+/* === Mobile Scaling Only === */
+@media (max-width: 520px) {
+  .container {
+    max-width: 100%; /* reduce overall width */
+    transform: scale(0.93); /* scale down the whole form slightly */
+    transform-origin: top center;
+  }
+}
+

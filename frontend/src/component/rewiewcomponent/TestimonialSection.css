@@ -1,0 +1,123 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.testimonial-wrapper {
+  width: 100%;
+  background: #000;
+  color: #fff;
+  font-family: "Poppins", sans-serif;
+}
+
+/* Cover Section */
+.testimonial-cover {
+  position: relative;
+  height: 300px; /* desktop height */
+}
+
+.testimonial-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7); /* black overlay */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.testimonial-title {
+  font-size: 48px; /* desktop font size */
+  font-weight: bold;
+  color: #fff;
+  text-align: center;
+  padding: 0 20px; /* prevent overflow for long text */
+}
+
+/* Content Section */
+.testimonial-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 60px 10%;
+  gap: 40px;
+  flex-wrap: wrap; /* allow wrapping for smaller screens */
+}
+
+/* Left Side */
+.testimonial-textbox {
+  flex: 1;
+  max-width: 600px;
+}
+
+.testimonial-paragraph {
+  line-height: 1.7;
+  font-size: 15px;
+  margin-top: 20px;
+}
+
+.testimonial-quote-icon {
+  color: #bbb;
+  margin-bottom: 10px;
+}
+
+/* Right Side */
+.testimonial-imagebox {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+#testimonial-image {
+  width: auto;            /* maintain aspect ratio */
+  max-width: 100%;        /* don't exceed container width */
+  height: 570px;          /* desktop portrait height */
+  border-radius: 12px;
+  object-fit: contain;    /* show full image without cropping */
+  box-shadow: 0 8px 25px rgba(0,0,0,0.4);
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  /* Stack content vertically */
+  .testimonial-content {
+    flex-direction: column;
+    padding: 40px 5%;
+  }
+
+  /* Image below text with spacing */
+  .testimonial-imagebox {
+    margin-top: 30px;
+  }
+
+  /* Portrait image for mobile */
+  #testimonial-image {
+    width: auto;
+    max-width: 100%;
+    height: 500px;       /* adjust height for mobile portrait */
+    object-fit: contain;  /* maintain full image */
+    border-radius: 12px;
+  }
+
+  /* Cover adjustments for mobile */
+  .testimonial-cover {
+    height: 400px; /* show more of the image */
+  }
+
+  /* Header text smaller */
+  .testimonial-title {
+    font-size: 28px;
+    text-align: center;
+    padding: 0 20px;
+  }
+
+  /* Paragraph text smaller */
+  .testimonial-paragraph {
+    font-size: 17px;
+    line-height: 1.8;
+  }
+}

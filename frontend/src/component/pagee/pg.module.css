@@ -1,0 +1,340 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Caveat:wght@400;700&display=swap');
+
+:root {
+  --accent-color: #bfa67a;
+  --bg-color: #0f0f0f;
+  --text-color: #f2f2f2;
+}
+
+/* ===================== */
+/* GLOBAL                */
+/* ===================== */
+.cwPageWrapper * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.cwPageWrapper {
+  font-family: "Playfair Display", serif;
+  color: var(--text-color);
+  background-color: var(--bg-color);
+  overflow-x: hidden;
+  width: 100%;
+}
+
+/* Fade-in smooth scroll animation */
+.cwVisible {
+  animation: fadeUp 1.2s ease forwards;
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ===================== */
+/* INTRO (Hero Banner)   */
+/* ===================== */
+.cwIntroBanner {
+  position: relative;
+  height: 100vh;
+  background: linear-gradient(to bottom right, rgba(0, 0, 0, 0.7), rgba(20, 20, 20, 0.6)),
+    url("/images/hero/mn01.jpg") center/cover no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.cwIntroOverlay {
+  position: absolute;
+  inset: 0;
+  backdrop-filter: brightness(0.8);
+}
+
+.cwIntroText {
+  position: relative;
+  z-index: 2;
+  max-width: 800px;
+  padding: 20px;
+}
+
+.cwIntroText h1 {
+  font-size: 3.5rem;
+  margin-bottom: 10px;
+  color: var(--accent-color);
+  letter-spacing: 1px;
+}
+
+.cwIntroText h2 {
+  font-size: 1.6rem;
+  margin-bottom: 20px;
+  color: #ccc;
+  font-weight: 400;
+  font-style: italic;
+}
+
+.cwIntroText p {
+  font-size: 1.15rem;
+  line-height: 1.8;
+  color: #eaeaea;
+  margin-bottom: 30px;
+}
+
+.cwScrollCue {
+  position: absolute;
+  bottom: 30px;
+  font-size: 2rem;
+  color: var(--accent-color);
+  animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+/* ===================== */
+/* HERITAGE SECTION      */
+/* ===================== */
+.cwHeritageBlock {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  padding: 100px 6%;
+  gap: 60px;
+}
+
+.cwHeritageContent {
+  flex: 1;
+}
+
+.cwHeritageContent h1 {
+  font-size: 2.8rem;
+  margin-bottom: 20px;
+  color: var(--accent-color);
+}
+
+.cwHeritageContent h2 {
+  margin-top: 25px;
+  font-size: 1.3rem;
+  color: #d5d5d5;
+  font-family: "Playfair Display", serif;
+}
+
+.cwHeritageContent p {
+  margin-bottom: 18px;
+  line-height: 1.7;
+  color: #cfcfcf;
+}
+
+.cwHeritageImage {
+  flex: 1.2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.cwHeritageImage img {
+  width: 90%;
+  height: auto;
+  border-radius: 20px;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.7);
+  transition: transform 0.5s ease;
+}
+
+.cwHeritageImage img:hover {
+  transform: scale(1.05);
+}
+
+/* ===================== */
+/* FEATURES SECTION      */
+/* ===================== */
+.cwFeaturesShowcase {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  padding: 100px 6%;
+  gap: 60px;
+  background: linear-gradient(to right, #111, #1a1a1a);
+}
+
+.cwFeaturesPhoto {
+  flex: 1;
+}
+
+.cwFeaturesPhoto img {
+  width: 100%;
+  border-radius: 18px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+}
+
+.cwFeaturesDetails {
+  flex: 1;
+}
+
+.cwFeaturesDetails h1 {
+  font-size: 2.3rem;
+  color: var(--accent-color);
+  margin-bottom: 25px;
+}
+
+.cwFeatureItem {
+  display: flex;
+  align-items: flex-start;
+  gap: 18px;
+  margin: 20px 0;
+  transition: transform 0.3s ease;
+}
+
+.cwFeatureItem:hover {
+  transform: translateX(10px);
+}
+
+.cwIconWrapper {
+  font-size: 1.8rem;
+  color: var(--accent-color);
+}
+
+.cwFeatureItem h2 {
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.cwFeatureItem p {
+  font-family: "Caveat", cursive;
+  font-size: 1.2rem;
+  color: #ddd;
+}
+
+.cwFeaturesDetails hr {
+  border: 0;
+  border-top: 1px solid #333;
+  margin: 25px 0;
+}
+
+/* ===================== */
+/* OUTRO CTA SECTION     */
+/* ===================== */
+.cwOutroCta {
+  position: relative;
+  background: url("/images/hero/2.jpg")
+    center/cover no-repeat;
+  padding: 120px 20px;
+  text-align: center;
+  min-height: 70vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cwOutroOverlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(5px);
+}
+
+.cwOutroContent {
+  position: relative;
+  z-index: 2;
+  max-width: 700px;
+  margin: 0 auto;
+  color: #fff;
+}
+
+.cwOutroContent h2 {
+  font-size: 2.2rem;
+  margin-bottom: 20px;
+  color: var(--accent-color);
+}
+
+.cwOutroContent p {
+  font-size: 1.1rem;
+  margin-bottom: 30px;
+  color: #e5e5e5;
+}
+
+/* ===================== */
+/* BUTTONS               */
+/* ===================== */
+.cwBtn {
+  display: inline-block;
+  padding: 14px 34px;
+  border: 2px solid var(--accent-color);
+  background: transparent;
+  color: var(--accent-color);
+  border-radius: 50px;
+  text-decoration: none;
+  transition: all 0.4s ease;
+  font-weight: 500;
+  letter-spacing: 0.6px;
+}
+
+.cwBtn:hover {
+  background: var(--accent-color);
+  color: #000;
+  box-shadow: 0 0 20px rgba(191, 166, 122, 0.5);
+}
+
+/* ===================== */
+/* RESPONSIVE DESIGN     */
+/* ===================== */
+@media (max-width: 900px) {
+  .cwHeritageBlock,
+  .cwFeaturesShowcase {
+    flex-direction: column;
+    padding: 60px 20px;
+  }
+
+  .cwIntroText h1 {
+    font-size: 2.4rem;
+  }
+
+  .cwIntroText h2 {
+    font-size: 1.2rem;
+  }
+
+  .cwFeaturesDetails h1,
+  .cwHeritageContent h1,
+  .cwOutroContent h2 {
+    font-size: 1.8rem;
+  }
+  
+  /* Mobile animations for images */
+  .cwHeritageImage img {
+    animation: fadeInScale 1.2s ease forwards;
+    opacity: 0;
+  }
+  
+  .cwFeaturesPhoto img {
+    animation: fadeInScale 1.2s ease forwards;
+    opacity: 0;
+    animation-delay: 0.3s;
+  }
+  
+  .cwVisible .cwHeritageImage img,
+  .cwVisible .cwFeaturesPhoto img {
+    animation-play-state: running;
+  }
+}
+
+@keyframes fadeInScale {
+  from {
+    opacity: 0;
+    transform: scale(0.9) translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}

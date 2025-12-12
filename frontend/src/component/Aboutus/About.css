@@ -1,0 +1,436 @@
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Montserrat:wght@300;400;500;600&display=swap');
+
+/* General Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body, html {
+    margin: 0;
+    height: 100%;
+    font-family: 'Montserrat', sans-serif;
+    color: #fff;
+    background-color: #0a0a0a;
+    scroll-behavior: smooth;
+}
+
+h1, h2, h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 600;
+}
+
+/* Main container for standard scrolling */
+.main-container {
+    height: 100%;
+    overflow-y: auto;
+    scroll-behavior: smooth;
+}
+
+/* Section styling */
+section {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 60px 20px;
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 1s ease-out;
+}
+
+section.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Hero Section */
+.hero {
+    position: relative;
+    background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1531058020387-3be344556be6?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80') center/cover no-repeat;
+    text-align: center;
+}
+
+.hero .overlay {
+    position: absolute;
+    top: 0; 
+    left: 0; 
+    right: 0; 
+    bottom: 0;
+    background: rgba(0,0,0,0.5);
+}
+
+.hero-text {
+    position: relative;
+    z-index: 1;
+    max-width: 800px;
+    padding: 0 20px;
+}
+
+.hero-text h1 {
+    font-size: 5rem;
+    margin-bottom: 20px;
+    letter-spacing: 3px;
+    color: #f8f0e3;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.6);
+}
+
+.hero-text h2 {
+    font-size: 2.2rem;
+    margin-bottom: 30px;
+    font-weight: 300;
+    color: #d4af37;
+    font-style: italic;
+}
+
+.hero-text p {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    margin-bottom: 40px;
+    color: #f8f0e3;
+}
+
+/* Decorative elements */
+.decoration {
+    position: absolute;
+    opacity: 0.1;
+    z-index: 0;
+}
+
+.decoration-1 {
+    top: 20%;
+    left: 10%;
+    width: 150px;
+    height: 150px;
+    border: 2px solid #d4af37;
+    transform: rotate(45deg);
+}
+
+.decoration-2 {
+    bottom: 20%;
+    right: 10%;
+    width: 100px;
+    height: 100px;
+    border: 2px solid #d4af37;
+    border-radius: 50%;
+}
+
+/* Scroll indicator */
+.scroll-indicator {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1000;
+    color: #d4af37;
+    font-size: 2rem;
+    animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {transform: translateY(0) translateX(-50%);}
+    40% {transform: translateY(-20px) translateX(-50%);}
+    60% {transform: translateY(-10px) translateX(-50%);}
+}
+
+/* Legacy Section */
+.legacy {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 60px 10%;
+    align-items: center;
+    background: linear-gradient(to right, #0a0a0a 60%, #1a1a1a 40%);
+    min-height: 100vh;
+}
+
+.legacy .content {
+    flex: 1;
+    padding: 40px;
+    background: rgba(10, 10, 10, 0.8);
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    min-width: 50%;
+    margin-right: 20px;
+}
+
+.legacy h1 {
+    font-size: 2.8rem;
+    margin-bottom: 25px;
+    color: #d4af37;
+}
+
+.legacy h2 {
+    font-size: 2rem;
+    margin: 30px 0 15px;
+    color: #f8f0e3;
+    border-left: 4px solid #d4af37;
+    padding-left: 15px;
+}
+
+.legacy p {
+    line-height: 1.8;
+    margin-bottom: 20px;
+    color: #ccc;
+    font-size: 1.1rem;
+}
+
+.legacy .image {
+    flex: 1;
+    text-align: center;
+    position: relative;
+    min-width: 40%;
+}
+
+.legacy img {
+    width: 80%;
+    border-radius: 10px;
+    transition: all 0.5s ease;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+    border: 5px solid rgba(212, 175, 55, 0.1);
+}
+
+.legacy img:hover {
+    transform: scale(1.03);
+    border-color: rgba(212, 175, 55, 0.3);
+}
+
+/* Celebration Section */
+.celebration {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    padding: 60px 10%;
+    background: linear-gradient(to left, #0a0a0a 60%, #1a1a1a 40%);
+    min-height: 100vh;
+}
+
+.celebration-image {
+    flex: 1;
+    text-align: center;
+    position: relative;
+    min-width: 40%;
+}
+
+.celebration-image img {
+    width: 80%;
+    border-radius: 10px;
+    transition: all 0.5s ease;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+    border: 5px solid rgba(212, 175, 55, 0.1);
+}
+
+.celebration-image img:hover {
+    transform: scale(1.03);
+    border-color: rgba(212, 175, 55, 0.3);
+}
+
+.celebration-text {
+    flex: 1;
+    padding: 40px;
+    background: rgba(10, 10, 10, 0.8);
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    min-width: 50%;
+    margin-left: 20px;
+}
+
+.celebration-text h1 {
+    font-size: 2.8rem;
+    margin-bottom: 30px;
+    color: #d4af37;
+}
+
+.celebration-text h2 {
+    font-size: 1.8rem;
+    margin: 25px 0 15px;
+    color: #f8f0e3;
+    display: flex;
+    align-items: center;
+}
+
+.celebration-text p {
+    line-height: 1.8;
+    margin-bottom: 25px;
+    color: #ccc;
+    font-size: 1.1rem;
+    padding-left: 40px;
+}
+
+hr {
+    border: 0;
+    height: 1px;
+    background: linear-gradient(to right, transparent, #d4af37, transparent);
+    margin: 30px 0;
+}
+
+/* Feature icon */
+.feature-icon {
+    width: 30px;
+    height: 30px;
+    margin-right: 15px;
+    background: #d4af37;
+    border-radius: 50%;
+    position: relative;
+    flex-shrink: 0;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.feature-icon i {
+    color: #0a0a0a;
+    font-size: 14px;
+}
+
+/* Button */
+.btn {
+    display: inline-block;
+    padding: 15px 35px;
+    background: transparent;
+    color: #d4af37;
+    text-decoration: none;
+    font-weight: 500;
+    border: 2px solid #d4af37;
+    border-radius: 50px;
+    transition: all 0.4s ease;
+    margin-top: 20px;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.btn:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: #d4af37;
+    transition: all 0.4s ease;
+    z-index: -1;
+}
+
+.btn:hover {
+    color: #0a0a0a;
+}
+
+.btn:hover:before {
+    left: 0;
+}
+
+/* Final CTA Section */
+.cta {
+    position: relative;
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1519225421980-715cb0215aed?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80') center/cover no-repeat;
+    padding: 100px 10%;
+    text-align: center;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.cta-overlay {
+    position: absolute;
+    top: 0; 
+    left: 0; 
+    right: 0; 
+    bottom: 0;
+    background: rgba(0,0,0,0.7);
+}
+
+.cta-text {
+    position: relative;
+    z-index: 1;
+    max-width: 800px;
+}
+
+.cta h2 {
+    font-size: 3.5rem;
+    margin-bottom: 25px;
+    color: #f8f0e3;
+}
+
+.cta p {
+    font-size: 1.3rem;
+    line-height: 1.8;
+    margin-bottom: 40px;
+    color: #ccc;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .legacy, .celebration {
+        flex-direction: column;
+        background: #0a0a0a;
+    }
+    
+    .legacy .content, .celebration-text {
+        margin: 0 0 50px 0;
+        min-width: 80%;
+    }
+    
+    .hero-text h1 {
+        font-size: 3.5rem;
+    }
+    
+    .hero-text h2 {
+        font-size: 1.8rem;
+    }
+    
+    .legacy .image, .celebration-image {
+        min-width: 80%;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero-text h1 {
+        font-size: 2.8rem;
+    }
+    
+    .legacy h1, .celebration-text h1 {
+        font-size: 2.2rem;
+    }
+    
+    .legacy h2, .celebration-text h2 {
+        font-size: 1.6rem;
+    }
+    
+    .cta h2 {
+        font-size: 2.5rem;
+    }
+    
+    .legacy .content, .celebration-text {
+        padding: 20px;
+    }
+    
+    .decoration {
+        display: none;
+    }
+    
+    .hero-text p, .legacy p, .celebration-text p, .cta p {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-text h1 {
+        font-size: 2.2rem;
+    }
+    
+    .hero-text h2 {
+        font-size: 1.4rem;
+    }
+    
+    .legacy, .celebration {
+        padding: 40px 5%;
+    }
+    
+    .btn {
+        padding: 12px 25px;
+        font-size: 0.9rem;
+    }
+}
