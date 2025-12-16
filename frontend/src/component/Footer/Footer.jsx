@@ -16,7 +16,7 @@ const Footer = () => (
   </p>
   <p>
     <span className="icon mail" /> 
-    <a href="mailto:studiorespectweddings@gmail.com">studiorespectweddings@gmail.com</a>
+    <a href="mailto:info@studiorespectweddings.com">info@studiorespectweddings.com</a>
   </p>
   <p>
     <span className="icon location" /> 
